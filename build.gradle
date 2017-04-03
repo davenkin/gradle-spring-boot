@@ -59,4 +59,6 @@ idea {
     }
 }
 
+apiTest.mustRunAfter test
+build.dependsOn apiTest
 
