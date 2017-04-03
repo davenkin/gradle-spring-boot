@@ -21,9 +21,9 @@ public class HelloWorldApiTest {
     private TestRestTemplate restTemplate;
 
     @Test
-    public void shouldSayHelloWorld() {
-        String result = restTemplate.getForObject("/helloworld", String.class);
-        assertEquals("Hello World!", result);
+    public void shouldSayAnotherHelloWorld() {
+        String result = restTemplate.getForObject("/anotherHelloworld", String.class);
+        assertEquals("Another Hello World!", result);
     }
 
 }

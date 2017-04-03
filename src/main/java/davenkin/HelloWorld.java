@@ -12,4 +12,8 @@ public class HelloWorld {
     public String hello() {
         return "Hello World!";
     }
+
+    public String anotherHello() {
+        return "Another Hello World!";
+    }
 }

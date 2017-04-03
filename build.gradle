@@ -13,6 +13,8 @@ repositories {
 
 apply plugin: 'java'
 apply plugin: 'idea'
+apply plugin: 'checkstyle'
+apply plugin: "jacoco"
 apply plugin: 'org.springframework.boot'
 apply plugin: 'application'
 applicationDefaultJvmArgs = [ "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005" ]
@@ -61,4 +63,18 @@ idea {
 
 apiTest.mustRunAfter test
 build.dependsOn apiTest
+
+//API Test Code coverage
+task jacocoApiTestReport(type: JacocoReport){
+    sourceSets sourceSets.main
+    executionData apiTest
+}
+
+//Unit Test and API Test Code coverage all together
+task jacocoAllTestReport(type: JacocoReport){
+    sourceSets sourceSets.main
+    executionData test, apiTest
+}
+
+
 
